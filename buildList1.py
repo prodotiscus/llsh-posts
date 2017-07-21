@@ -3,7 +3,7 @@ import re, json
 members_html = open('List1.html', 'r').read()
 members_json = {'List1Members': []}
 members = re.finditer(
-    r'<li><b>([А-ЯЁа-яё]+)<\/b>\s([А-ЯЁа-яё]+)\s\(([А-ЯЁа-яё]+)\)<\/li>',
+    r'<li><b>\s*([А-ЯЁа-яё]+)\s*<\/b>\s+([А-ЯЁа-яё]+)\s+\(\s*([А-ЯЁа-яё\-]+)\s*\)(\s+\[\*\])?<\/li>',
     members_html
 )
 for member in members:
